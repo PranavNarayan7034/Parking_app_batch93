@@ -1,3 +1,5 @@
+import parking_fns
+
 print('............ WELCOME TO ABC PARKING ............')
 print()
 floor_one = []    # maximum 3
@@ -12,18 +14,21 @@ while True:
         info = {'vehicle_no':vn,'vehicle_type':vt,'Time':time}
         if len(floor_one)<3:
             floor_one.append(info)
-            print(floor_one)
         elif len(floor_two)<3:
             floor_two.append(info)
-            print(floor_two)
         elif len(floor_three)<3:
             floor_three.append(info)
-            print(floor_three)
         else:
             print('Parking is full... please try after some time')
-
+        print(floor_one)
+        print(floor_two)
+        print(floor_three)
     elif choice == 'exit':
         vn = input('Enter your vehicle no:')
+        parking_fns.vehicle_exit(floor_one,floor_two,floor_three,vn)
+        print(floor_one)
+        print(floor_two)
+        print(floor_three)
         print('Thank you for using ABC Parking....')
     else:
         print('Invalid choice..! Try again')
